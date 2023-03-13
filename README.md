@@ -27,3 +27,7 @@ L’utilisateur du coté client doit saisir un seul caractère pour chaque tenta
 
 ## :pushpin: Exemple : 
 Le mot MAROC sera présenté de la façon suivante : M - - - C
+
+
+## :pushpin: Credits : 
+@usmhic
