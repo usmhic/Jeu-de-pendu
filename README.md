@@ -1,10 +1,10 @@
 # Jeu de pendu Client-Serveur
 
-Le projet -jeu de pendu- consiste à développer le fameux jeu du pendu classique qui consiste à initier une partie pour tenter de trouver un mot caché généré d’une façon aléatoire au bout d’un certain nombre de tentatives (dix tentatives maximum), en comptant le score obtenu pour chaque partie. Le score reflète la rapidité du joueur à retrouver le mot caché. Après avoir consommé toutes les tentatives sans que le joueur puisse retrouver le mot caché, ce joueur est considéré comme perdant (partie perdue)
+Ce projet consiste à développer le fameux jeu du pendu classique qui consiste à initier une partie pour tenter de trouver un mot caché généré d’une façon aléatoire au bout d’un certain nombre de tentatives (dix tentatives maximum), en comptant le score obtenu pour chaque partie. Le score reflète la rapidité du joueur à retrouver le mot caché. 
+Après avoir consommé toutes les tentatives sans que le joueur puisse retrouver le mot caché, ce joueur est considéré comme perdant (partie perdue).
 
 ## :pushpin: Développement: 
-Le développement du jeu doit prendre en considération l’ensemble des consignes :
-1. On réalisera une application distribuée (Client/Serveur), et donc on doit prévoir le développement de deux programmes : un 1èr programme coté Serveur et un 2ème programme coté Client.  
+1. Une application distribuée (Client/Serveur), et donc on doit prévoir le développement de deux programmes : un 1èr programme coté Serveur et un 2ème programme coté Client.  
 2. On utilisera les techniques de programmation multithreading afin de permettre au serveur d’accepter de servir plusieurs clients simultanément : plusieurs clients peuvent initier des parties de jeu sur le même serveur en même temps.
 3. Le serveur évitera toute sorte du blocage qui pourra être dû à l’utilisation de fonctions bloquantes comme l’attente de connexion ou la réception de messages.
 4. Le serveur est toujours prêt et en écoute de nouvelles connexions pour servir un nombre de client pourront atteindre 10 clients.
