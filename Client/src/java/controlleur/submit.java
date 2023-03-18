@@ -8,33 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import jeu.Jeu;
 
 
 @WebServlet(name = "submit", urlPatterns = {"/submit"})
 public class submit extends HttpServlet {
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet submit</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet submit at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -42,14 +20,15 @@ public class submit extends HttpServlet {
         
         HttpSession session = request.getSession();
         
+        Jeu jeu = new Jeu();       
+        String word = jeu.getWord();            
+        int n=10, i, l = word.length();
+        String newWord = jeu.maskWord(l,word); 
         session.setAttribute("PicNum", request.getParameter("Input"));
-        session.setAttribute("Random", Jeu1.getWord());
+        session.setAttribute("Random", jeu.getWord());        
+        for(i=0;i<n;i++){
+            
+        }        
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
-
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }
