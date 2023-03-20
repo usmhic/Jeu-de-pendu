@@ -1,3 +1,4 @@
+<%@page import="jeu.Jeu"%>
 <!doctype html>
 <html class="no-js">
 <head>
@@ -55,7 +56,7 @@
                     <form action="submit" method="POST">
                         <div class="column">
                             <img class="img-thumbnail" src="assets/hangman/6.png" width="200" height="200">
-                            <h1><%= session.getAttribute("Random") %></h1>
+                            <h1><%= session.getAttribute("word") %></h1>
                             <div class="ui divider"></div>
                         </div>
                         <div class="ui segment">
@@ -63,20 +64,21 @@
                                 <div class="two fields">
                                    <div class="inline field">
                                         <label>Guess the word!</label>
-                                        <input placeholder="..." type="text">
+                                        <input type="text" name="letter" onClick="return validation()">
                                     </div>
                                 </div>
-                                <input type="text" name="submit" value="" />
                                 <div class="ui submit button">Submit</div>      
                             </div>                           
                         </div>
+                    </form>
+                    <form action="submit"  method="POST">
+                        <input type="text" name="inputLetter" value="" />
+                        <input type="submit" value="inputLetter" />
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    
-    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.13.0/javascript/semantic.min.js"></script>
     <script src="main.js"></script>
