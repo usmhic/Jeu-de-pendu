@@ -45,9 +45,9 @@
                             </div>                           
                         </div>
                     </form>
-                    <form action="submit"  method="POST">
-                        <input type="text" name="inputLetter" value="" />
-                        <input type="submit" value="inputLetter" />
+                    <form action="Envoyer"  method="POST">
+                        <input type="text" name="input" value="" />
+                        <input type="submit" value="input" />
                     </form>
                 </div>
             </div>

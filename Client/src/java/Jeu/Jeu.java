@@ -7,14 +7,12 @@ public class Jeu {
     public String getWord(){
         
         String[] list = {"Finland", "Russia", "Latvia", "Lithuania", "Poland","Morocco", "Spain", "France", "Portugal"}; // list of String containing all the countries.        
-        
         Random r = new Random(); // create an object name r from Random Class
         int ranint = r.nextInt(list.length); // use object r to generate random integer between 0 and list length
         String word = list[ranint]; // assign a random string from list to word
         return word;
     }
                 
-    
     public String maskWord(String selectedWord){
         int i;
         String word = selectedWord.substring(0,1);
@@ -36,12 +34,15 @@ public class Jeu {
         return inputWord;
     }
     
-    public boolean checkInput(String input){
+    public int checkInput(String input){
+        if(input.equals("stop")) {
+            return 2;
+        }
         if(input.length() == 1) {
             if( Character.isLetter(input.charAt(0)) ){
-                return true;
+                return 1;
             }
         }
-        return false;
+        return 0;
     }
 }

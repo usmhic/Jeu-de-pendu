@@ -39,11 +39,12 @@ public class Serveur implements Runnable {
                 BufferedReader request = new BufferedReader(new InputStreamReader(socket.getInputStream()));               
                 String input = request.readLine();
                 
-                while(!jeu.checkInput(input)){
+                while(jeu.checkInput(input) == 0){
                     send.println("Input must be one letter");  
                     BufferedReader newRequest = new BufferedReader(new InputStreamReader(socket.getInputStream()));               
                     input = newRequest.readLine();
-                }  
+                } 
+                if (jeu.checkInput(input) == 2) break;
                 word = jeu.updateWord(selectedWord, inputWord, input);
                 if (word.equals(inputWord)) i++;
                 inputWord = word;
