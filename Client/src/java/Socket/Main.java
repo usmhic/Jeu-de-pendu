@@ -11,10 +11,11 @@ public class Main {
             int n=0;
             while(true){
                 Socket socket = server.accept(); //Récupération de la socket
-                n++;
+
                 System.out.println("Client: "+n);
                 Thread t = new Thread(new Serveur(socket));
                 t.start();
+                n++;
             }
         }
         catch(IOException e){

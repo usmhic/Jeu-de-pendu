@@ -11,7 +11,7 @@ public class Serveur implements Runnable {
     public Socket socket;
     
     public Serveur(Socket s){
-        this.socket=s;
+        this.socket = s;
     }
     
     @Override
@@ -30,17 +30,23 @@ public class Serveur implements Runnable {
             Jeu jeu = new Jeu();       
             String selectedWord = jeu.getWord();
                 
-            int n=10, i=0, l = selectedWord.length();
-            String inputWord = jeu.maskWord(l, selectedWord); 
-                                
+            int n=10, i=0;
+            String word, inputWord = jeu.maskWord(selectedWord); 
+                        
             while(i<n && !inputWord.equals(selectedWord)) {
                 send.println("("+(n-i)+" Attempts left) Your word is: "+inputWord);
                     
-                BufferedReader request = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                String letter = request.readLine();
-                   
-                inputWord = jeu.updateWord(selectedWord, inputWord, n, i, letter );
-                i++;
+                BufferedReader request = new BufferedReader(new InputStreamReader(socket.getInputStream()));               
+                String input = request.readLine();
+                
+                while(!jeu.checkInput(input)){
+                    send.println("Input must be one letter");  
+                    BufferedReader newRequest = new BufferedReader(new InputStreamReader(socket.getInputStream()));               
+                    input = newRequest.readLine();
+                }  
+                word = jeu.updateWord(selectedWord, inputWord, input);
+                if (word.equals(inputWord)) i++;
+                inputWord = word;
             }
               
             send.close();
