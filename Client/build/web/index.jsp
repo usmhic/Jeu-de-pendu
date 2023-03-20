@@ -1,4 +1,3 @@
-<%@page import="jeu.Jeu"%>
 <!doctype html>
 <html class="no-js">
 <head>
@@ -13,37 +12,12 @@
 </head>
 <body>
     <div class="ui grid labeled">
-        <div class="computer tablet only row">
+        <div class="">
             <div class="ui inverted fixed menu navbar page grid">
                 <a href="" class="brand item">Jeu de Pendu</a>
                 <a href="" class="active item"><i class="gamepad icon"></i></a>                
-                <a href="" class="item">About</a>
                 <div class="right menu">
                    <a href="" class="item"><i class="github icon"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="mobile only row">
-            <div class="ui fixed inverted navbar menu">
-                <a href="" class="brand item">Jeu de Pendu</a>
-                <div class="right menu open">
-                    <a href="" class="menu item">
-                        <i class="reorder icon"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="ui vertical navbar menu">
-                <a href="" class="active item">Home</a>
-                <div class="ui item">
-                    <div class="text">Dropdown</div>
-                    <div class="menu">
-                        <a href="" class="active item"><i class="gamepad icon"></i></a>
-                        <a href="" class="active item"><i class="gamepad icon"></i></a> 
-                      </div>
-                </div>
-                <div class="menu">
-                    <a href="" class="active item">Default</a>
-                    <a href="" class="item">Static top</a>
                 </div>
             </div>
         </div>
@@ -56,14 +30,14 @@
                     <form action="submit" method="POST">
                         <div class="column">
                             <img class="img-thumbnail" src="assets/hangman/6.png" width="200" height="200">
-                            <h1><%= session.getAttribute("word") %></h1>
+                            <h1></h1>
                             <div class="ui divider"></div>
                         </div>
                         <div class="ui segment">
                             <div class="ui form">
                                 <div class="two fields">
                                    <div class="inline field">
-                                        <label>Guess the word!</label>
+                                        <label>Guess the Country!</label>
                                         <input type="text" name="letter" onClick="return validation()">
                                     </div>
                                 </div>
