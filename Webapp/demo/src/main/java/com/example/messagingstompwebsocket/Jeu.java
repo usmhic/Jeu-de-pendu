@@ -1,4 +1,4 @@
-package Jeu;
+package com.example.messagingstompwebsocket;
 
 import java.util.*;
 import java.io.*;
@@ -21,24 +21,16 @@ public class Jeu {
         return newlist;
     }
 
-
     public String getWord() throws IOException{
         String[] list = getWordList();
-        // list of String containing all the countries.
-
+        // list of String containing all the countries.        
         Random r = new Random(); 
         // create an object name r from Random Class
-        
-        int ranint = r.nextInt(list.length-1); 
-        // use object r to generate random integer between 0 and list length - 1
-
-        String word = list[ranint]; 
-        // assign a random string from list to word
-        
+        int ranint = r.nextInt(list.length); // use object r to generate random integer between 0 and list length
+        String word = list[ranint]; // assign a random string from list to word
         return word;
     }
-          
-    
+                
     public String maskWord(String selectedWord){
         int i;
         String word = selectedWord.substring(0,1);
