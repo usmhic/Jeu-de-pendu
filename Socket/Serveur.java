@@ -1,10 +1,9 @@
 package Socket;
 
 import Jeu.Jeu;
+
 import java.net.*;
 import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Serveur implements Runnable {
     
@@ -55,8 +54,8 @@ public class Serveur implements Runnable {
             socket.close();
        
         } 
-        catch (IOException ex) {
-            Logger.getLogger(Serveur.class.getName()).log(Level.SEVERE, null, ex);
+        catch (Exception e) {
+            e.printStackTrace();
         } 
     }
 }

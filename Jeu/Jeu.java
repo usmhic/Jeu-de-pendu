@@ -1,13 +1,15 @@
 package Jeu;
 
-import java.util.Random;
+import java.util.*;
 
 public class Jeu {
     
     public String getWord(){
         
-        String[] list = {"Finland", "Russia", "Latvia", "Lithuania", "Poland","Morocco", "Spain", "France", "Portugal"}; // list of String containing all the countries.        
-        Random r = new Random(); // create an object name r from Random Class
+        String[] list = {"Finland", "Russia", "Latvia", "Lithuania", "Poland","Morocco", "Spain", "France", "Portugal"}; 
+        // list of String containing all the countries.        
+        Random r = new Random(); 
+        // create an object name r from Random Class
         int ranint = r.nextInt(list.length); // use object r to generate random integer between 0 and list length
         String word = list[ranint]; // assign a random string from list to word
         return word;

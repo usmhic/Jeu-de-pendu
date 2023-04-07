@@ -1,5 +1,7 @@
 package Jeu;
 
+import java.util.*;
+
 public class JeuConsole {
         
     public String inputLetterConsole(String word, int n, int i){
@@ -35,7 +37,8 @@ public class JeuConsole {
         }
     }
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
+
         Jeu jeu = new Jeu();
         jeu.runConsole();
     }

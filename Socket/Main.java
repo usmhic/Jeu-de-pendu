@@ -1,14 +1,12 @@
 package Socket;
 
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.io.*;
+import java.net.*;
 
 public class Main {
-    
-    
     public static void main(String[] args) throws InterruptedException{
         try{
+
             // la creation dun ServerSocket server qui va acooute le port 300 pour les demande des client
             ServerSocket server = new ServerSocket(3000);
             
@@ -24,6 +22,7 @@ public class Main {
                 n++;// la joute de 1 quand un neuvau clinet connecte ou serveur
             }
         }
+
         catch(IOException e){
             System.out.println(e);
         }
