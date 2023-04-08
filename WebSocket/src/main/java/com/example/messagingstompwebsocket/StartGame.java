@@ -1,13 +1,13 @@
 package com.example.messagingstompwebsocket;
 
-public class Greeting {
+public class StartGame {
 
     private String content;
   
-    public Greeting() {
+    public StartGame() {
     }
   
-    public Greeting(String content) {
+    public StartGame(String content) {
       this.content = content;
     }
   

@@ -1,13 +1,13 @@
 package com.example.messagingstompwebsocket;
 
-public class HelloMessage {
+public class UserMessage {
 
   private String name;
 
-  public HelloMessage() {
+  public UserMessage() {
   }
 
-  public HelloMessage(String name) {
+  public UserMessage(String name) {
     this.name = name;
   }
 
